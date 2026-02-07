@@ -1,0 +1,102 @@
+/* الألوان الملكية: أزرق داكن وذهبي */
+:root {
+    --primary: #001f3f;
+    --accent: #c5a059;
+    --bg: #f8f9fa;
+    --white: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--primary);
+}
+
+/* الهيدر الموحد */
+.master-nav {
+    background: var(--primary);
+    padding: 10px 0;
+    border-bottom: 3px solid var(--accent);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.main-logo { height: 50px; width: auto; }
+
+/* شريط الأدوات */
+.tools-bar {
+    display: flex;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 7px 15px;
+    border-radius: 30px;
+}
+
+.tool-item {
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: 0.3s transform;
+    cursor: pointer;
+}
+
+.tool-item:hover { transform: scale(1.2); }
+
+/* الأزرار واللغات */
+.nav-actions { display: flex; align-items: center; gap: 15px; }
+
+.lang-switcher select {
+    background: transparent;
+    color: white;
+    border: 1px solid var(--accent);
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-book-nav {
+    background: #FF8C42;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* التنسيق العام */
+.blog-hero {
+    background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('img/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+
+.placeholder-msg {
+    text-align: center;
+    padding: 50px;
+    background: white;
+    border-radius: 15px;
+    border: 1px dashed var(--accent);
+}
+
+.main-footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--primary);
+    color: white;
+    margin-top: 50px;
+}
