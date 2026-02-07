@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/ocean-view-blog # حط سميتك هنا والـ Repo
+  branch: main
+
+media_folder: "img/uploads" # هنا فين غايتجمعو تصاور المقالات بوحدهم
+public_folder: "/img/uploads"
+
+collections:
+  - name: "blog"
+    label: "المقالات (Blog Posts)"
+    folder: "_posts" # غايتكرى هاد المجلد بوحدو ملي تكتب أول مقال
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "العنوان (Title)", name: "title", widget: "string"}
+      - {label: "اللغة", name: "language", widget: "select", options: ["ar", "en", "fr", "nl", "es", "de"]}
+      - {label: "تاريخ النشر", name: "date", widget: "datetime"}
+      - {label: "صورة الغلاف", name: "thumbnail", widget: "image"}
+      - {label: "وصف الـ SEO", name: "description", widget: "text"}
+      - {label: "المحتوى", name: "body", widget: "markdown"}
