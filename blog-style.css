@@ -1,70 +1,109 @@
-/* الألوان الملكية */
+/* الألوان الملكية مع لمسة مغربية */
 :root {
     --primary: #001f3f;
     --accent: #c5a059;
+    --bg: #f4f1ea; /* لون رملي خفيف */
     --white: #ffffff;
+    --orange-book: #FF8C42;
 }
 
-/* تصغير مساحة الترحيب */
-.blog-hero {
-    background: linear-gradient(rgba(0,31,63,0.8), rgba(0,31,63,0.8)), url('img/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 40px 20px; /* نقصنا هنا باش ما تبقاش كبيرة */
-    border-bottom: 2px solid var(--accent);
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    /* إضافة نقش مغربي خفيف في الخلفية */
+    background-image: url('https://www.transparenttextures.com/patterns/arabesque.png');
+    color: var(--primary);
 }
 
-.blog-hero h1 { font-size: 1.8rem; margin-bottom: 5px; }
-.blog-hero p { font-size: 1rem; opacity: 0.9; }
+/* الهيدر مع Blur عصري */
+.master-nav {
+    background: rgba(0, 31, 63, 0.9);
+    backdrop-filter: blur(10px); /* تأثير الضبابية */
+    padding: 8px 0;
+    border-bottom: 3px solid var(--accent);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-/* تنسيق الهيدر واللغات */
-.nav-actions {
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    padding: 0 20px;
 }
 
-/* شكل أنيق لاختيار اللغة */
+.main-logo { height: 45px; width: auto; transition: 0.3s; }
+.main-logo:hover { transform: rotate(-3deg) scale(1.05); }
+
+/* شريط الأدوات أنيق */
+.tools-bar {
+    display: flex;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 5px 15px;
+    border-radius: 30px;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+.tool-item {
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.tool-item:hover { transform: translateY(-3px) scale(1.2); }
+
+/* زر اللغات والـ Booking */
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+
 .lang-switcher {
-    position: relative;
     display: flex;
     align-items: center;
     background: rgba(255,255,255,0.1);
-    border: 1px solid var(--accent);
-    border-radius: 20px;
-    padding: 2px 8px;
-}
-
-.lang-switcher::before {
-    content: "🌐"; /* أيقونة العالم */
-    margin-right: 5px;
-    font-size: 0.9rem;
+    border-radius: 5px;
+    padding: 2px 5px;
 }
 
 .lang-switcher select {
     background: transparent;
     color: white;
     border: none;
-    font-size: 0.85rem;
+    padding: 5px;
     cursor: pointer;
-    outline: none;
-    appearance: none; /* حيدنا السهم القديم ديال المتصفح */
-}
-
-/* زر الـ Book Now */
-.btn-book-nav {
-    background: #FF8C42;
-    padding: 6px 12px;
-    border-radius: 20px;
     font-size: 0.85rem;
-    text-transform: uppercase;
 }
 
-/* اللوغو */
-.main-logo {
-    max-height: 45px;
-    width: auto;
-    display: block;
+.btn-book-nav {
+    background: var(--orange-book);
+    color: white !important;
+    padding: 7px 18px;
+    border-radius: 25px; /* شكل بيضاوي أنيق */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
+    transition: 0.3s;
 }
+
+.btn-book-nav:hover { background: #e6762e; transform: scale(1.05); }
+
+/* تصغير البانر (Hero Section) */
+.blog-hero {
+    background: linear-gradient(rgba(0,31,63,0.6), rgba(0,31,63,0.6)), url('img/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 50px 20px; /* تصغير المساحة */
+    border-bottom: 5px solid var(--accent);
+}
+
+.blog-hero h1 { font-size: 2rem; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+.blog-hero p { font-size: 1rem; opacity: 0.9; margin-top: 10px; }
+
+/* الحاوية والمقالات */
+.container { max-width: 1000px; margin: 30px auto; }
