@@ -1,21 +1,30 @@
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/ocean-view-blog # حط سميتك هنا والـ Repo
+  repo: artist-24-7/ocean-view-blog
   branch: main
 
-media_folder: "img/uploads" # هنا فين غايتجمعو تصاور المقالات بوحدهم
+media_folder: "img/uploads"
 public_folder: "/img/uploads"
 
 collections:
   - name: "blog"
     label: "المقالات (Blog Posts)"
-    folder: "_posts" # غايتكرى هاد المجلد بوحدو ملي تكتب أول مقال
+    folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "العنوان (Title)", name: "title", widget: "string"}
-      - {label: "اللغة", name: "language", widget: "select", options: ["ar", "en", "fr", "nl", "es", "de"]}
-      - {label: "تاريخ النشر", name: "date", widget: "datetime"}
-      - {label: "صورة الغلاف", name: "thumbnail", widget: "image"}
-      - {label: "وصف الـ SEO", name: "description", widget: "text"}
-      - {label: "المحتوى", name: "body", widget: "markdown"}
+      - {label: "العنوان الرئيسي (العربية)", name: "title", widget: "string"}
+      - {label: "وصف SEO (Long Tail Keywords)", name: "description", widget: "text", required: false}
+      - {label: "صورة الغلاف", name: "thumbnail", widget: "image", required: false}
+      - {label: "اللغة الأساسية للمقال", name: "language", widget: "select", options: ["ar", "en", "fr", "nl", "es", "de"], default: "ar"}
+      
+      # روابط السوشيال ميديا الخاصة بهذا المقال (اختيارية)
+      - {label: "رابط YouTube", name: "youtube", widget: "string", required: false}
+      - {label: "رابط Instagram", name: "instagram", widget: "string", required: false}
+      - {label: "رابط Affiliate / خارجي", name: "affiliate_link", widget: "string", required: false}
+
+      # محتوى المقال (تقدر تعمر لغة وحدة والباقي لا)
+      - {label: "المحتوى بالعربية 🇲🇦", name: "body", widget: "markdown"}
+      - {label: "Content in English 🇬🇧", name: "body_en", widget: "markdown", required: false}
+      - {label: "Contenu en Français 🇫🇷", name: "body_fr", widget: "markdown", required: false}
+      - {label: "Inhoud in het Nederlands 🇳🇱", name: "body_nl", widget: "markdown", required: false}
