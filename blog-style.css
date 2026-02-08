@@ -2,16 +2,20 @@
 :root {
     --primary: #001f3f;
     --accent: #c5a059;
-    --bg: #f4f1ea; /* لون رملي خفيف */
+    --bg: #f4f1ea; 
     --white: #ffffff;
     --orange-book: #FF8C42;
 }
 
-body {
+/* 1. إصلاح أساسي لمنع الهربان ديال الصفحة في التليفون */
+html, body {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg);
-    /* إضافة نقش مغربي خفيف في الخلفية */
     background-image: url('https://www.transparenttextures.com/patterns/arabesque.png');
     color: var(--primary);
 }
@@ -19,7 +23,7 @@ body {
 /* الهيدر مع Blur عصري */
 .master-nav {
     background: rgba(0, 31, 63, 0.9);
-    backdrop-filter: blur(10px); /* تأثير الضبابية */
+    backdrop-filter: blur(10px);
     padding: 8px 0;
     border-bottom: 3px solid var(--accent);
     position: sticky;
@@ -37,9 +41,8 @@ body {
 }
 
 .main-logo { height: 45px; width: auto; transition: 0.3s; }
-.main-logo:hover { transform: rotate(-3deg) scale(1.05); }
 
-/* شريط الأدوات أنيق */
+/* شريط الأدوات - مجموع ومقاد */
 .tools-bar {
     display: flex;
     gap: 12px;
@@ -49,20 +52,32 @@ body {
     border: 1px solid rgba(197, 160, 89, 0.3);
 }
 
-.tool-item {
-    text-decoration: none;
-    font-size: 1.3rem;
-    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
+.tool-item { text-decoration: none; font-size: 1.3rem; transition: 0.3s; }
 
-.tool-item:hover { transform: translateY(-3px) scale(1.2); }
+/* تنسيق الموبايل - عملية جراحية للأيقونات */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+    .tools-bar {
+        order: 2;
+        width: fit-content;
+        margin: 0 auto;
+    }
+    .nav-actions {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+    }
+    .blog-hero h1 { font-size: 1.6rem !important; }
+}
 
 /* زر اللغات والـ Booking */
 .nav-actions { display: flex; align-items: center; gap: 12px; }
 
 .lang-switcher {
-    display: flex;
-    align-items: center;
     background: rgba(255,255,255,0.1);
     border-radius: 5px;
     padding: 2px 5px;
@@ -74,36 +89,48 @@ body {
     border: none;
     padding: 5px;
     cursor: pointer;
-    font-size: 0.85rem;
 }
 
 .btn-book-nav {
     background: var(--orange-book);
     color: white !important;
     padding: 7px 18px;
-    border-radius: 25px; /* شكل بيضاوي أنيق */
+    border-radius: 25px;
     text-decoration: none;
     font-weight: bold;
     font-size: 0.9rem;
-    box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
-    transition: 0.3s;
 }
 
-.btn-book-nav:hover { background: #e6762e; transform: scale(1.05); }
-
-/* تصغير البانر (Hero Section) */
+/* البانر (Hero Section) - الحجم اللي بغيتي */
 .blog-hero {
     background: linear-gradient(rgba(0,31,63,0.6), rgba(0,31,63,0.6)), url('img/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
-    padding: 50px 20px; /* تصغير المساحة */
+    padding: 60px 20px;
     border-bottom: 5px solid var(--accent);
 }
 
-.blog-hero h1 { font-size: 2rem; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-.blog-hero p { font-size: 1rem; opacity: 0.9; margin-top: 10px; }
+/* الفوتر الهماوي - Copyright في الوسط وباين */
+.main-footer {
+    background: var(--primary);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 4px solid var(--accent);
+}
+
+.main-footer p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
+}
 
 /* الحاوية والمقالات */
-.container { max-width: 1000px; margin: 30px auto; }
+.container { 
+    max-width: 1000px; 
+    margin: 30px auto; 
+    padding: 0 20px;
+}
