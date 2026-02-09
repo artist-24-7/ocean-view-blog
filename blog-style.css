@@ -1,4 +1,4 @@
-/* الألوان والأساسيات */
+/* الألوان والأساسيات الملكية */
 :root {
     --primary: #001f3f;
     --accent: #c5a059;
@@ -14,71 +14,82 @@ html, body {
     background-image: url('https://www.transparenttextures.com/patterns/arabesque.png');
 }
 
-/* هيدر شفاف وأنيق */
+/* هيدر أنيق */
 .master-nav {
-    background: rgba(0, 31, 63, 0.9);
+    background: rgba(0, 31, 63, 0.95);
     backdrop-filter: blur(10px);
-    padding: 10px 0;
+    padding: 12px 0;
     position: sticky; top: 0; z-index: 1000;
-    border-bottom: 2px solid var(--accent);
+    border-bottom: 3px solid var(--accent);
 }
 
 .nav-container {
     max-width: 1200px; margin: 0 auto;
     display: flex; justify-content: space-between; align-items: center;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
-.main-logo { height: 40px; }
+.main-logo { height: 45px; width: auto; }
 
-/* جمع الأيقونات والزر الليموني في سطر واحد متوازن */
-.nav-actions {
-    display: flex; align-items: center; gap: 15px; /* مسافة كافية باش ما يتغطاش زر اللغات */
-}
-
+/* جمع الأيقونات وتوسيطها */
 .tools-bar {
-    display: flex; gap: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 5px 15px; border-radius: 20px;
+    display: flex; 
+    justify-content: center; 
+    gap: 18px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 20px; 
+    border-radius: 30px;
+    border: 1px solid rgba(197, 160, 89, 0.4);
 }
 
-.tool-item { font-size: 1.6rem; text-decoration: none; }
+.tool-item { font-size: 1.5rem; text-decoration: none; transition: 0.3s; }
+.tool-item:hover { transform: scale(1.2); }
+
+/* زر اللغات والـ Booking */
+.nav-actions { display: flex; align-items: center; gap: 15px; }
+
+.lang-switcher select {
+    background: rgba(255,255,255,0.1);
+    color: white; border: 1px solid var(--accent);
+    padding: 5px; border-radius: 5px;
+}
 
 .btn-book-nav {
     background: var(--orange-book);
     color: white !important;
-    padding: 8px 20px;
+    padding: 10px 22px;
     border-radius: 25px;
     font-weight: bold;
     text-decoration: none;
-    white-space: nowrap; /* كيمنع الكلمة تقسم على جوج */
+    box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
 }
 
-/* البانر (Hero) - مجموع ومقاد */
+/* البانر الرئيسي */
 .blog-hero {
     background: linear-gradient(rgba(0,31,63,0.5), rgba(0,31,63,0.5)), url('img/hero-bg.jpg');
     background-size: cover; background-position: center;
     color: white; text-align: center;
-    padding: 60px 20px;
+    padding: 80px 20px;
+    border-bottom: 5px solid var(--accent);
 }
 
-.blog-hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
-
-/* الفوتر (Copyright) - كبير وفي الوسط */
+/* الفوتر (Copyright) - حل مشكلة الـ PC */
 .main-footer {
     background: var(--primary);
     color: white;
     padding: 40px 20px;
     text-align: center;
     border-top: 5px solid var(--accent);
+    width: 100%;
+    margin-top: 50px;
 }
 
 .main-footer p { font-size: 1.2rem; font-weight: bold; margin: 0; }
 
-/* موبايل - تنظيم ذكي جداً */
+/* موبايل - تنظيم جراحي */
 @media (max-width: 768px) {
     .nav-container { flex-direction: column; gap: 15px; }
-    .nav-actions { width: 100%; justify-content: center; flex-wrap: wrap; }
-    .tools-bar { order: 2; }
-    .btn-book-nav { order: 1; font-size: 1.1rem; padding: 10px 25px; }
+    .nav-actions { width: 100%; justify-content: center; }
+    .tools-bar { order: 2; width: fit-content; margin: 0 auto; }
+    .btn-book-nav { order: 1; }
 }
