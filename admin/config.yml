@@ -4,7 +4,8 @@ backend:
   branch: main
   base_url: https://blog.oceanviewvillamorocco.com # الدومين ديالك دابا
   auth_endpoint: api/auth # هادي اللي غاتخدم مع السوارت اللي حطينا
-
+  local_backend: true
+  
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
 
