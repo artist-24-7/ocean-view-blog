@@ -40,6 +40,9 @@ html, body {
     padding: 8px 20px; 
     border-radius: 30px;
     border: 1px solid rgba(197, 160, 89, 0.4);
+    justify-content: center; /* باش يجيو في الوسط نيشان */
+padding-right: 0; 
+margin: 10px auto; /* كيجمعهم في الوسط */
 }
 
 .tool-item { font-size: 1.5rem; text-decoration: none; transition: 0.3s; }
