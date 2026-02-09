@@ -14,17 +14,18 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "العنوان الرئيسي (العربية)", name: "title", widget: "string"}
-      - {label: "وصف SEO (Long Tail Keywords)", name: "description", widget: "text", required: false}
+      - {label: "وصف SEO", name: "description", widget: "text", required: false}
       - {label: "صورة الغلاف", name: "thumbnail", widget: "image", required: false}
-      - {label: "اللغة الأساسية للمقال", name: "language", widget: "select", options: ["ar", "en", "fr", "nl", "es", "de"], default: "ar"}
+      - {label: "اللغة الأساسية", name: "language", widget: "select", options: ["ar", "en", "fr", "nl", "es", "de"], default: "ar"}
       
-      # روابط السوشيال ميديا الخاصة بهذا المقال (اختيارية)
       - {label: "رابط YouTube", name: "youtube", widget: "string", required: false}
       - {label: "رابط Instagram", name: "instagram", widget: "string", required: false}
-      - {label: "رابط Affiliate / خارجي", name: "affiliate_link", widget: "string", required: false}
+      - {label: "رابط Affiliate", name: "affiliate_link", widget: "string", required: false}
 
-      # محتوى المقال (تقدر تعمر لغة وحدة والباقي لا)
+      # محتوى المقال بكل اللغات
       - {label: "المحتوى بالعربية 🇲🇦", name: "body", widget: "markdown"}
       - {label: "Content in English 🇬🇧", name: "body_en", widget: "markdown", required: false}
       - {label: "Contenu en Français 🇫🇷", name: "body_fr", widget: "markdown", required: false}
       - {label: "Inhoud in het Nederlands 🇳🇱", name: "body_nl", widget: "markdown", required: false}
+      - {label: "Contenido en Español 🇪🇸", name: "body_es", widget: "markdown", required: false}
+      - {label: "Inhalt auf Deutsch 🇩🇪", name: "body_de", widget: "markdown", required: false}
