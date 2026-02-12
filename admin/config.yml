@@ -2,7 +2,7 @@ backend:
   name: github
   repo: artist-24-7/ocean-view-blog
   branch: main
-  base_url: https://blog.oceanviewvillamorocco.com # الدومين ديالك دابا
+  base_url: https://blog.oceanviewvillamorocco.com/admin/oauth.html # الدومين ديالك دابا
   auth_endpoint: api/auth # هادي اللي غاتخدم مع السوارت اللي حطينا
   local_backend: true
   
