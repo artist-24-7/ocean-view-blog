@@ -9,7 +9,6 @@ backend:
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
 
-
 collections:
   - name: "blog"
     label: "المقالات (Blog Posts)"
