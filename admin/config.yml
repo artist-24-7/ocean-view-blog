@@ -4,6 +4,7 @@ backend:
   branch: main
   base_url: https://auth.oceanviewvillamorocco.com
   auth_endpoint: /auth
+  site_domain: blog.oceanviewvillamorocco.com
 
 # إعدادات الميديا
 media_folder: "img/uploads"
