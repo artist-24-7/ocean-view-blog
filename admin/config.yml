@@ -2,8 +2,8 @@ backend:
   name: github
   repo: artist-24-7/ocean-view-blog
   branch: main
-  base_url: https://blog.oceanviewvillamorocco.com
-  auth_endpoint: /api/auth
+ base_url: https://auth.oceanviewvillamorocco.com.
+ auth_endpoint: /auth
   local_backend: true
   
 media_folder: "img/uploads"
