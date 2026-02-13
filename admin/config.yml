@@ -5,8 +5,12 @@ backend:
   base_url: https://auth.oceanviewvillamorocco.com
   auth_endpoint: /auth
 
+# إعدادات الميديا
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
+
+# تفعيل وضع تحرير المسودات (مهم لـ Cloudflare Pages)
+publish_mode: editorial_workflow
 
 collections:
   - name: "blog"
