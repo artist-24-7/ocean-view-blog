@@ -3,7 +3,7 @@ backend:
   repo: artist-24-7/ocean-view-blog
   branch: main
   base_url: https://auth.oceanviewvillamorocco.com
-  auth_endpoint: /auth
+  auth_endpoint: auth
   site_domain: blog.oceanviewvillamorocco.com
 
 # إعدادات الميديا
