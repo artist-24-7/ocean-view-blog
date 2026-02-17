@@ -4,13 +4,9 @@ backend:
   branch: main
   base_url: https://auth.oceanviewvillamorocco.com
   auth_endpoint: auth
-  site_domain: blog.oceanviewvillamorocco.com
 
-# إعدادات الميديا
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
-
-# تفعيل وضع تحرير المسودات (مهم لـ Cloudflare Pages)
 publish_mode: editorial_workflow
 
 collections:
@@ -20,18 +16,8 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "العنوان الرئيسي (العربية)", name: "title", widget: "string"}
-      - {label: "وصف SEO", name: "description", widget: "text", required: false}
-      - {label: "صورة الغلاف", name: "thumbnail", widget: "image", required: false}
-      - {label: "اللغة الأساسية", name: "language", widget: "select", options: ["ar", "en", "fr", "nl", "es", "de"], default: "ar"}
-      
-      - {label: "رابط YouTube", name: "youtube", widget: "string", required: false}
-      - {label: "رابط Instagram", name: "instagram", widget: "string", required: false}
-      - {label: "رابط Affiliate", name: "affiliate_link", widget: "string", required: false}
-
-      - {label: "المحتوى بالعربية 🇲🇦", name: "body", widget: "markdown"}
-      - {label: "Content in English 🇬🇧", name: "body_en", widget: "markdown", required: false}
-      - {label: "Contenu en Français 🇫🇷", name: "body_fr", widget: "markdown", required: false}
-      - {label: "Inhoud in het Nederlands 🇳🇱", name: "body_nl", widget: "markdown", required: false}
-      - {label: "Contenido en Español 🇪🇸", name: "body_es", widget: "markdown", required: false}
-      - {label: "Inhalt auf Deutsch 🇩🇪", name: "body_de", widget: "markdown", required: false}
+      - { label: "العنوان الرئيسي", name: "title", widget: "string" }
+      - { label: "وصف SEO", name: "description", widget: "text", required: false }
+      - { label: "صورة الغلاف", name: "thumbnail", widget: "image", required: false }
+      - { label: "رابط YouTube", name: "youtube", widget: "string", required: false, hint: "Paste full YouTube URL" }
+      - { label: "المحتوى بالعربية", name: "body", widget: "markdown" }
