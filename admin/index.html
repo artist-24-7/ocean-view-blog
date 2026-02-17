@@ -3,22 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ocean View Admin | التحكم</title>
+  <title>Content Manager</title>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <script>
-    // هاد الكود كيراقب الميساجات اللي جايين من الوركر
-    window.addEventListener('message', (event) => {
-      if (event.origin === 'https://auth.oceanviewvillamorocco.com') {
-        console.log("Message received from worker:", event.data);
-        // إيلا كان الميساج فيه الساروت، كنصيفطوه لـ Decap CMS داخلياً
-        if (typeof event.data === 'string' && event.data.includes("authorization:github:success")) {
-           // هاد السطر كيهنينا من "النقزة" وكيخلي السيت يعرف بلي الساروت وصل
-           window.postMessage(event.data, window.location.origin);
-        }
-      }
-    }, false);
-  </script>
 </body>
 </html>
