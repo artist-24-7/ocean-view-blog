@@ -1,10 +1,7 @@
 backend:
   name: git-gateway
   branch: main
-  commit_messages:
-    create: "Create {{collection}} “{{slug}}”"
-    update: "Update {{collection}} “{{slug}}”"
-    delete: "Delete {{collection}} “{{slug}}”"
+  site_domain: blog.oceanviewvillamorocco.com # هادي هي اللي كتفصلو على السيت الأم
 
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
@@ -17,9 +14,19 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "العنوان الرئيسي (العربية)", name: "title", widget: "string"}
+      - {label: "العنوان الرئيسي", name: "title", widget: "string"}
       - {label: "وصف SEO", name: "description", widget: "text", required: false}
       - {label: "صورة الغلاف", name: "thumbnail", widget: "image", required: false}
       - {label: "اللغة الأساسية", name: "language", widget: "select", options: ["ar", "en", "fr", "nl", "es", "de"], default: "ar"}
+      
+      # روابط الميديا
       - {label: "رابط YouTube", name: "youtube", widget: "string", required: false}
+      - {label: "رابط Instagram", name: "instagram", widget: "string", required: false}
+      
+      # المحتوى بجميع اللغات
       - {label: "المحتوى بالعربية 🇲🇦", name: "body", widget: "markdown"}
+      - {label: "English Content 🇬🇧", name: "body_en", widget: "markdown", required: false}
+      - {label: "Contenu Français 🇫🇷", name: "body_fr", widget: "markdown", required: false}
+      - {label: "Nederlandse Inhoud 🇳🇱", name: "body_nl", widget: "markdown", required: false}
+      - {label: "Contenido Español 🇪🇸", name: "body_es", widget: "markdown", required: false}
+      - {label: "Deutscher Inhalt 🇩🇪", name: "body_de", widget: "markdown", required: false}
