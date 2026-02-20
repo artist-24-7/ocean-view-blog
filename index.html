@@ -12,6 +12,8 @@
       gtag('config', 'G-NRFR2XF3P8');
     </script>
 
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <title>Ocean View Chronicles | سيدي موسى - الواليدية</title>
     <meta name="description" content="دليلك الشامل لسيدي موسى والواليدية: طقس، صيد، تخطيط رحلات، وحساب ميزانية. اكتشف سحر دكالة مع Ocean View.">
     
@@ -72,5 +74,16 @@
         <p>© 2026 Ocean View Villa Morocco. كل الحقوق محفوظة.</p>
     </footer>
 
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
 </body>
 </html>
