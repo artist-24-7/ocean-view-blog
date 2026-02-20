@@ -1,9 +1,10 @@
 backend:
-  name: github
-  repo: artist-24-7/ocean-view-blog
+  name: git-gateway
   branch: main
-  base_url: https://auth.oceanviewvillamorocco.com
-  auth_endpoint: auth
+  commit_messages:
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
 
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
@@ -16,8 +17,9 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "العنوان الرئيسي", name: "title", widget: "string" }
-      - { label: "وصف SEO", name: "description", widget: "text", required: false }
-      - { label: "صورة الغلاف", name: "thumbnail", widget: "image", required: false }
-      - { label: "رابط YouTube", name: "youtube", widget: "string", required: false, hint: "Paste full YouTube URL" }
-      - { label: "المحتوى بالعربية", name: "body", widget: "markdown" }
+      - {label: "العنوان الرئيسي (العربية)", name: "title", widget: "string"}
+      - {label: "وصف SEO", name: "description", widget: "text", required: false}
+      - {label: "صورة الغلاف", name: "thumbnail", widget: "image", required: false}
+      - {label: "اللغة الأساسية", name: "language", widget: "select", options: ["ar", "en", "fr", "nl", "es", "de"], default: "ar"}
+      - {label: "رابط YouTube", name: "youtube", widget: "string", required: false}
+      - {label: "المحتوى بالعربية 🇲🇦", name: "body", widget: "markdown"}
